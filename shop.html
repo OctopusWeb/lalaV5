@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/common.css"><br />
+		<style type="text/css">
+			html,body { background: #ffffff;}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title">商城</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="home-tab-item" id="index_main">
+				<span class="mui-icon iconfont icon-pengyou"></span>
+				<span class="mui-tab-label">互助</span>
+			</a>
+			<a class="home-tab-item" id="index_expanded">
+				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<span class="mui-tab-label">推广</span>
+			</a>
+			<a class="home-tab-item" id="index_shop">
+				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<span class="mui-tab-label">商城</span>
+			</a>
+			<a class="home-tab-item" id="index_user">
+				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
+				<span class="mui-tab-label">个人</span>
+			</a>
+		</nav>
+		<div id="slider" class="mui-slider" >
+			<div class="mui-slider-group mui-slider-loop">
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="javascript:void(0)">
+						<img src="images/yuantiao.jpg">
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="javascript:void(0)">
+						<img src="images/shuijiao.jpg">
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="javascript:void(0)">
+						<img src="images/muwu.jpg">
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="javascript:void(0)">
+						<img src="images/cbd.jpg">
+					</a>
+				</div>
+				<div class="mui-slider-item">
+					<a href="javascript:void(0)">
+						<img src="images/yuantiao.jpg">
+					</a>
+				</div>
+				<div class="mui-slider-item mui-slider-item-duplicate">
+					<a href="javascript:void(0)">
+						<img src="images/shuijiao.jpg">
+					</a>
+				</div>
+			</div>
+			<div class="mui-slider-indicator">
+				<div class="mui-indicator mui-active"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+				<div class="mui-indicator"></div>
+			</div>
+		</div>
+		<div class="mui-content" style="padding-top:0px; background: #fff;">
+
+			<ul class="mui-table-view mui-grid-view">
+				<li class="mui-table-view-cell mui-media mui-col-xs-6">
+											<div class="lala-list" id="shop-list" style="background: #efeff4;">
+						</div>
+					<a href="javascript:void(0)">
+						<img class="mui-media-object" src="images/shop1.jpg">
+						<div class="mui-media-body">全国手机充值100元电信话费直充快充电信充值</div>       
+						<p class='mui-ellipsis'>信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/app.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+			interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		mui.plusReady(function(){
+			plus.nativeUI.showWaiting();
+			
+			setTimeout(function(){
+				plus.nativeUI.closeWaiting();
+			},500)
+		});
+		
+	</script>
+</html>

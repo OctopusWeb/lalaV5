@@ -1,0 +1,146 @@
+{
+  "feedback.html": {
+    "href": "feedback.html",
+    "resources": [],
+    "priority": 0
+  },
+  "set_userinfo.html": {
+    "href": "set_userinfo.html",
+    "resources": [],
+    "refer": [],
+    "priority": 1
+  },
+  "set_bank.html": {
+    "href": "set_bank.html",
+    "resources": [],
+    "refer": [],
+    "priority": 1
+  },
+  "question_detail.html": {
+    "href": "question_detail.html",
+    "resources": [],
+    "priority": 3
+  },
+  "question_data.html": {
+    "href": "question_data.html",
+    "resources": [],
+    "refer": [],
+    "priority": 3
+  },
+  "question.html": {
+    "href": "question.html",
+    "resources": [],
+    "refer": [],
+    "priority": 3
+  },
+  "pa_accept_detail.html": {
+    "href": "pa_accept_detail.html",
+    "resources": [],
+    "refer": [],
+    "priority": 4
+  },
+  "pa_provide_detail.html": {
+    "href": "pa_provide_detail.html",
+    "resources": [],
+    "refer": [],
+    "priority": 5
+  },
+  "deal_record_detail.html": {
+    "href": "deal_record_detail.html",
+    "resources": [],
+    "refer": [],
+    "priority": 4
+  },
+  "deal_record.html": {
+    "href": "deal_record.html",
+    "resources": [],
+    "refer": [],
+    "priority": 4
+  },
+  "wallet_frozen.html": {
+    "href": "wallet_frozen.html",
+    "resources": [],
+    "priority": 5
+  },
+  "wallet_dynamic.html": {
+    "href": "wallet_dynamic.html",
+    "resources": [],
+    "priority": 6
+  },
+  "wallet_static.html": {
+    "href": "wallet_static.html",
+    "resources": [],
+    "refer": [],
+    "priority": 7
+  },
+  "wallet.html": {
+    "href": "wallet.html",
+    "resources": [],
+    "refer": [],
+    "priority": 5
+  },
+  "change_password.html": {
+    "href": "change_password.html",
+    "resources": [],
+    "refer": [],
+    "priority": 6
+  },
+  "announce.html": {
+    "href": "announce.html",
+    "resources": [],
+    "priority": 7
+  },
+  "user.html": {
+    "href": "user.html",
+    "resources": [],
+    "refer": [],
+    "priority": 0
+  },
+  "main_data.html": {
+    "href": "main_data.html",
+    "resources": [],
+    "refer": [],
+    "priority": 1
+  },
+  "shop.html": {
+    "href": "shop.html",
+    "resources": [],
+    "priority": 2
+  },
+  "team_detail.html": {
+    "href": "team_detail.html",
+    "resources": [],
+    "refer": [],
+    "priority": 4
+  },
+  "sell_activate.html": {
+    "href": "sell_activate.html",
+    "resources": [],
+    "refer": [],
+    "priority": 5
+  },
+  "expanded.html": {
+    "href": "expanded.html",
+    "resources": [],
+    "refer": [],
+    "priority": 3
+  },
+  "provide.html": {
+    "href": "provide.html",
+    "resources": [],
+    "refer": [],
+    "priority": 6
+  },
+  "accept.html": {
+    "href": "accept.html",
+    "resources": [],
+    "refer": [],
+    "priority": 8
+  },
+  "main.html": {
+    "href": "main.html",
+    "resources": [],
+    "refer": [],
+    "priority": 0
+  }
+}

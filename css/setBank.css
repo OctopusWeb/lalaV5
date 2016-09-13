@@ -1,0 +1,33 @@
+html,body {
+	background-color: #efeff4;
+}
+.title {
+	font-size: 16px;
+	padding: 20px;
+	color: #CE8B0C;
+	text-align: center;
+}
+.set_icon {
+	float:left;
+	padding: 20px 20px 20px 30px;
+}
+.set_icon span {
+	font-size:40px;
+}
+.set_icon span.icon-zhifubao {
+	font-size: 50px;
+}
+.set_icon span.icon-pengyou {
+	font-size: 50px;
+}
+.set_info {
+	text-align: left;
+}
+.set_name {
+	font-size: 20px;
+}
+.set_detail p {
+	color:#fff;
+	margin: 0;
+	line-height: 30px;
+}

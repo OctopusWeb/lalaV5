@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/setBank.css">
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title">收款方式</h1>
+			<a id="editInfo" class="mui-pull-right" style="line-height: 46px;">修改</a>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="home-tab-item mui-active" id="index_main">
+				<span class="mui-icon iconfont icon-pengyou"></span>
+				<span class="mui-tab-label">互助</span>
+			</a>
+			<a class="home-tab-item" id="index_expanded">
+				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<span class="mui-tab-label">推广</span>
+			</a>
+			<a class="home-tab-item" id="index_shop">
+				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<span class="mui-tab-label">商城</span>
+			</a>
+			<a class="home-tab-item" id="index_user">
+				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
+				<span class="mui-tab-label">个人</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<div class="title">
+				请填写您的账号，以便你能及时收到打款！
+			</div>
+			<button class="mui-btn mui-btn-block mui-btn-green">
+				<div class="set_icon">
+					<span class="iconfont icon-yinxingqia"></span>
+				</div>
+				<div class="set_info">
+					<div class="set_name">银行储蓄卡卡号</div>
+					<div class="set_detail" id='bankCard'>
+						<p></p>
+						<p></p>
+					</div>
+				</div>
+			</button>
+			<button class="mui-btn mui-btn-block mui-btn-warning">
+				<div class="set_icon">
+					<span class="iconfont icon-zhifubao"></span>
+				</div>
+				<div class="set_info">
+					<div class="set_name">支付宝账号</div>
+					<div class="set_detail" id='aliPay'>
+						<p></p>
+					</div>
+				</div>
+			</button>
+			<button class="mui-btn mui-btn-block mui-btn-red">
+				<div class="set_icon">
+					<span class="iconfont icon-pengyou"></span>
+				</div>
+				<div class="set_info">
+					<div class="set_name">拉拉币账号</div>
+					<div class="set_detail" id='lalaCoin'>
+						<p></p>
+					</div>
+				</div>
+			</button>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="script/user.js"></script>
+	<script>
+		(function($, doc) {
+			$.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			
+			function showDate(stateData) {
+				if(typeof stateData.cardnumber == "undefined" || stateData.cardnumber == null || stateData.cardnumber == "") {
+					doc.getElementById("bankCard").innerHTML = "<p>未设置</p>";
+				} else {
+					doc.getElementById("bankCard").innerHTML = "<p>" + stateData.cardbank + stateData.cardaccount + "</p><p>" + stateData.cardnumber + "</p>";
+				}
+				
+				if(typeof stateData.aplipay == "undefined" || stateData.aplipay == null || stateData.aplipay == "") {
+					doc.getElementById("aliPay").innerHTML = "<p>未设置</p>";
+				} else {
+					doc.getElementById("aliPay").innerHTML = "<p>" + stateData.aplipay + "</p>";
+				}
+
+				if(typeof stateData.lalacoin == "undefined" || stateData.lalacoin == null || stateData.lalacoin == "") {
+					doc.getElementById("lalaCoin").innerHTML = "<p>未设置</p>";
+				} else {
+					doc.getElementById("lalaCoin").innerHTML = "<p>" + stateData.lalacoin + "</p>";
+				}
+			}
+			
+			window.addEventListener("updateData", function() {
+				var state = app.getState();
+				showDate(state)
+			});
+			
+			$.plusReady(function() {
+				var state = app.getState();
+				showDate(state);
+
+				var setUserinfoPage = $.preload({
+					"id"  : "setUserinfo",
+					"url" : "set_userinfo.html"
+				});
+				
+				var setUserinfoButton  = doc.getElementById("editInfo");
+				setUserinfoButton.addEventListener("tap", function(){
+					$.fire(setUserinfoPage, 'show', null);
+					$.openWindow({
+						id: 'setUserinfo',
+						show: {
+							aniShow: 'pop-in'
+						},
+						waiting: {
+							autoShow: false
+						}
+					});
+				});
+				
+			});
+			
+		}(mui, document));
+		
+	</script>
+</html>

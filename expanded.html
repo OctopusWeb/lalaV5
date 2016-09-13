@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/expanded.css">
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title">推广中心</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="home-tab-item mui-active" id="index_main">
+				<span class="mui-icon iconfont icon-pengyou"></span>
+				<span class="mui-tab-label">互助</span>
+			</a>
+			<a class="home-tab-item" id="index_expanded">
+				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<span class="mui-tab-label">推广</span>
+			</a>
+			<a class="home-tab-item" id="index_shop">
+				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<span class="mui-tab-label">商城</span>
+			</a>
+			<a class="home-tab-item" id="index_user">
+				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
+				<span class="mui-tab-label">个人</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<div class="expand-user">
+				<div class="user-name">
+					<p class="username">
+						<span id="username"></span>
+						<button type="button" id="qiandao" class="yes">已签到</button>
+					</p>
+					<p id="jointime"></p>
+					<p id="group"></p>
+				</div>
+				<div class="activate">
+					<div class="activate_count">
+						<label>激活码数量</label>
+						<span id="activate_count">0</span>
+					</div>
+					<button type="button" id="sell_activate">
+						激活码转让
+					</button>
+				</div>
+			</div>
+			<div id="segmentedControl" class="mui-segmented-control" style="margin-top: 20px;width: 98%;margin-left: 1%;">
+				<a class="mui-control-item mui-active" href="#item1mobile">
+					团队一
+					<span class="mui-badge mui-badge-warning" id="item1Count">0</span>
+				</a>
+				<a class="mui-control-item" href="#item2mobile">
+					团队二
+					<span class="mui-badge mui-badge-warning" id="item2Count">0</span>
+				</a>
+				<a class="mui-control-item" href="#item3mobile">
+					团队三
+					<span class="mui-badge mui-badge-warning" id="item3Count">0</span>
+				</a>
+			</div>
+			<div id="slideProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+			<div class="mui-slider-group">
+				<div id="item1mobile" class="mui-control-content mui-active">
+					<table class="mui-table-view" cellpadding="0" cellspacing="0" border="0" width="98%" style="margin-left: 1%;">
+						<thead>
+							<tr>
+								<th class="mui-table-cell mui-col-xs-2">序号</th>
+								<th class="mui-table-cell mui-col-xs-2">姓名</th>
+								<th class="mui-table-cell mui-col-xs-3">注册</th>
+								<th class="mui-table-cell mui-col-xs-2">组别</th>
+								<th class="mui-table-cell mui-col-xs-3">当前交易</th>
+							</tr>
+						</thead>
+						<tbody id="team1-list">
+						</tbody>
+					</table>
+				</div>
+				<div id="item2mobile" class="mui-control-content">
+					<table class="mui-table-view" cellpadding="0" cellspacing="0" border="0" width="100%">
+						<thead>
+							<tr>
+								<th class="mui-table-cell mui-col-xs-2">序号</th>
+								<th class="mui-table-cell mui-col-xs-2">姓名</th>
+								<th class="mui-table-cell mui-col-xs-3">注册</th>
+								<th class="mui-table-cell mui-col-xs-2">组别</th>
+								<th class="mui-table-cell mui-col-xs-3">当前交易</th>
+							</tr>
+						</thead>
+						<tbody id="team2-list">
+						</tbody>
+					</table>
+				</div>
+				<div id="item3mobile" class="mui-control-content">
+					<table class="mui-table-view" cellpadding="0" cellspacing="0" border="0" width="100%">
+						<thead>
+							<tr>
+								<th class="mui-table-cell mui-col-xs-2">序号</th>
+								<th class="mui-table-cell mui-col-xs-2">姓名</th>
+								<th class="mui-table-cell mui-col-xs-3">注册</th>
+								<th class="mui-table-cell mui-col-xs-2">组别</th>
+								<th class="mui-table-cell mui-col-xs-3">当前交易</th>
+							</tr>
+						</thead>
+						<tbody id="team3-list">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="script/expanded.js"></script>
+	<script type="text/javascript">
+		(function($, doc) {
+			$.init({
+				swipeBack:true
+			});
+			
+			var userPage = $.preload({
+				"id": 'user',
+				"url": 'user.html'
+			});
+		
+			var username = doc.getElementById("username");
+			var jointime = doc.getElementById("jointime");
+			var group = doc.getElementById("group");
+			var activateCount = doc.getElementById("activate_count");
+			
+			$.plusReady(function() {
+				
+				function loadData() {
+					plus.nativeUI.showWaiting();
+					var state = app.getState();
+					var data = {}; 
+					data.username = state.username;
+					app.userinfo(data, function(err) {
+						plus.nativeUI.closeWaiting();
+						if (err) {
+							plus.nativeUI.toast(err);
+							return;
+						}
+						username.innerHTML = state.truename;
+						jointime.innerHTML = "加入时间："+state.jointime;
+						group.innerHTML = '<i class="iconfont icon-xunzhang"></i>'+state.group;
+						activateCount.innerHTML = state.activate_count;
+						if(state.lastsign == null) {
+							doc.getElementById("qiandao").setAttribute("class","no");
+							doc.getElementById("qiandao").innerHTML = "签到";
+						} else {
+							var signTime = new Date(parseInt(state.lastsign) * 1000);
+							var signDay = signTime.getFullYear() + "-" + (signTime.getMonth()+1) + "-" + signTime.getDate();
+							var now = new Date();
+							var nowDay = now.getFullYear() + "-" + (now.getMonth()+1) + "-" + now.getDate();
+							if(signDay == nowDay) {
+								doc.getElementById("qiandao").setAttribute("class","yes");
+								doc.getElementById("qiandao").innerHTML = "已签到";
+							} else {
+								doc.getElementById("qiandao").setAttribute("class","no");
+								doc.getElementById("qiandao").innerHTML = "签到";
+							}
+						}
+						mui.fire(userPage, 'refreshData', {group:state.group});
+					});
+					data.level = 1;
+					app.userteam(data, 'team1-list', 'item1Count', function(err) {
+						if (err) {
+							plus.nativeUI.toast(err);
+							return;
+						}
+					});
+					data.level = 2;
+					app.userteam(data, 'team2-list', 'item2Count', function(err) {
+						if (err) {
+							plus.nativeUI.toast(err);
+							return;
+						}
+					});
+					data.level = 3;
+					app.userteam(data, 'team3-list', 'item3Count', function(err) {
+						if (err) {
+							plus.nativeUI.toast(err);
+							return;
+						}
+					});
+
+				}
+				
+				loadData();
+				
+				window.addEventListener('changeCount', function(event) {
+					loadData();
+				}, false);
+				
+				$(".mui-slider-group").on("tap", "tbody tr", function(){
+					var userid = this.getAttribute('data-id');
+					setTimeout(function() {
+						$.openWindow({
+							id: 'teamDetail',
+							url: "team_detail.html",
+							waiting: {
+								autoShow: true
+							},
+							extras: {
+								userid: userid
+							},
+						});
+					}, 0);
+				});
+				
+				var signButton = doc.getElementById("qiandao");
+				var sellActivateButton = doc.getElementById("sell_activate");
+				signButton.addEventListener("tap", function(){
+					var state = app.getState();
+					var signStatus = this.getAttribute("class");
+					if(signStatus == "no") {
+						var data = {};
+						data.username = state.username;
+						app.sign(data, function(err) {
+							if (err) {
+								plus.nativeUI.toast(err);
+								return;
+							}
+						});
+					}
+					
+				}, false);
+				
+				var sellActivatePage = $.preload({
+					"id": 'sellActivate',
+					"url": 'sell_activate.html'
+				});
+				
+				sellActivateButton.addEventListener("tap", function() {
+					var count = doc.getElementById("activate_count").innerHTML;
+					count = parseInt(count);
+					if(count == 0) {
+						plus.nativeUI.toast("您的激活币数量不足！");
+						return;
+					} else {
+						$.openWindow({
+							id: 'sellActivate',
+							show: {
+								aniShow: 'pop-in'
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+							waiting: {
+								autoShow: false
+							},
+						});
+					}
+				}, false);
+				
+			});
+			
+		}(mui, document));
+	</script>
+</html>

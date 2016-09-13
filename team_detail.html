@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/teamDetail.css">
+		<style type="text/css">
+			.mui-slider-cell .mui-table-cell {
+				-webkit-touch-callout:text;
+				-webkit-user-select:text;
+				-khtml-user-select:text;
+				-moz-user-select:text;
+				-ms-user-select:text;
+				user-select:text;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a id="exit" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title">会员信息</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="home-tab-item mui-active" id="index_main">
+				<span class="mui-icon iconfont icon-pengyou"></span>
+				<span class="mui-tab-label">互助</span>
+			</a>
+			<a class="home-tab-item" id="index_expanded">
+				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<span class="mui-tab-label">推广</span>
+			</a>
+			<a class="home-tab-item" id="index_shop">
+				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<span class="mui-tab-label">商城</span>
+			</a>
+			<a class="home-tab-item" id="index_user">
+				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
+				<span class="mui-tab-label">个人</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
+				<li class="mui-table-view-cell">
+					<div class="mui-slider-cell">
+						<div class="oa-contact-cell mui-table">
+							<div class="mui-table-cell">
+								会员账号：
+							</div>
+							<div class="mui-table-cell mui-text-right" id="username">
+							</div>
+						</div>
+						<div class="oa-contact-cell mui-table">
+							<div class="mui-table-cell">
+								会员姓名：
+							</div>
+							<div class="mui-table-cell mui-text-right" id="truename">
+							</div>
+						</div>
+						<div class="oa-contact-cell mui-table">
+							<div class="mui-table-cell">
+								注册日期：
+							</div>
+							<div class="mui-table-cell mui-text-right" id="registertime">
+							</div>
+						</div>
+						<div class="oa-contact-cell mui-table">
+							<div class="mui-table-cell">
+								成员等级：
+							</div>
+							<div class="mui-table-cell mui-text-right" id="group">
+							</div>
+						</div>
+						<div class="oa-contact-cell mui-table">
+							<div class="mui-table-cell">
+								当前交易：
+							</div>
+							<div class="mui-table-cell mui-text-right" id="money">
+							</div>
+						</div>
+						<div class="oa-contact-cell mui-table">
+							<div class="mui-table-cell">
+								联系方式：
+							</div>
+							<div class="mui-table-cell mui-text-right" id="contact">
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<div class="mui-content-padded" id="btn-div">
+				
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="script/teamDetail.js"></script>
+	<script>
+		(function($, doc) {
+			$.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			$.plusReady(function() {
+				
+				webPageFunction = function() {
+					plus.webview.currentWebview().close();
+				}
+				
+				plus.screen.lockOrientation("portrait-primary");
+				var self = plus.webview.currentWebview();
+				var userid   = parseInt(self.userid);
+				
+				if(userid == 0) {
+					plus.nativeUI.toast("无效参数！");
+					$.back();
+				}
+				var data = {};
+				data.uid = userid;
+				app.getUserDetail(data, function(err) {
+					if (err) {
+						plus.nativeUI.toast(err);
+						return;
+					}
+				});
+				
+				$("#btn-div").on("tap", "button#activate-btn", function(){
+					var uid = parseInt(this.getAttribute("uid"));
+					if(uid == 0) {
+						plus.nativeUI.toast("参数错误！");
+						return;
+					} else {
+						var state = app.getState();
+						var data = {}
+						data.username = state.username;
+						data.uid = uid;
+						app.activateUser(data, function(err,data_rs) {
+							if (err) {
+								plus.nativeUI.toast(err);
+								return;
+							}
+							var expandedPage = $.preload({
+								"id": 'expanded',
+								"url": 'expanded.html'
+							});
+							var newState = app.getState();
+							$.fire(expandedPage, 'changeCount', null);
+							$.alert("您已成功激活该会员！","拉拉平台",'确定',function(){
+								setTimeout(function() {
+									$.openWindow({
+										id: 'expanded',
+										show: {
+											aniShow: 'pop-in'
+										},
+										waiting: {
+											autoShow: false
+										}
+									});
+								}, 0);
+							});
+						});
+					}
+				});
+			});
+			$.back = function() {
+				plus.webview.currentWebview().close();
+				$.back();
+			}
+		}(mui, document));
+	</script>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/common.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 id="title" class="mui-title" style="overflow-x:-webkit-marquee; font-size: 14px;">拉拉</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="home-tab-item mui-active" id="index_main">
+				<span class="mui-icon iconfont icon-pengyou"></span>
+				<span class="mui-tab-label">互助</span>
+			</a>
+			<a class="home-tab-item" id="index_expanded">
+				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<span class="mui-tab-label">推广</span>
+			</a>
+			<a class="home-tab-item" id="index_shop">
+				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<span class="mui-tab-label">商城</span>
+			</a>
+			<a class="home-tab-item" id="index_user">
+				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
+				<span class="mui-tab-label">个人</span>
+			</a>
+		</nav>
+		<div class="mui-content">
+			<a id="provide" class="provide" style="color: green;">
+				<span class="iconfont icon-zhengfuwuchangzijinzizhu verylarge iconfont-home"></span>
+				<span style="icon-text">提供帮助</span>
+			</a>
+			<a id="wallet" class="wallet" style="color: darkred;">
+				<span class="iconfont iconfont-home" style="height:92px; margin: 15px 0 5px 0;  ">
+					<img src="images/bag.png" width="90" height="90" />
+				</span>
+				<span style="icon-text">个人钱包</span>
+			</a>
+			<a id="accept" class="accept" style="color: #EF6F12;">
+				<span class="iconfont icon-suodeshui verylarge iconfont-home"></span>
+				<span style="icon-text">得到帮助</span>
+			</a>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="script/main.js"></script>
+		<script type="text/javascript" src="js/update.js"></script>
+		<script type="text/javascript">
+			(function($, doc) {
+				
+				$.init({
+				    subpages:[{
+						url:"main_data.html",
+						id:"main_data",
+						styles:{
+							top:190,
+							bottom: 50,
+						},
+					}]
+				});
+				
+				var contentWebview = null;
+				$.plusReady(function() {
+					window.addEventListener("refresh", function(event) {
+						if(contentWebview==null){
+							contentWebview = plus.webview.currentWebview().children()[0];
+						}
+						contentWebview.evalJS("mui('#refreshContainer').pullRefresh().pulldownLoading()");
+						
+						var state = app.getState();
+						var data = {};
+						data.readannounceid = state.readannounceid;
+						app.isReadAnnounce(data, function(err) {
+							if (err) {
+								$.openWindow({
+									id: 'announce',
+									url: 'announce.html',
+									show: {
+										aniShow: 'pop-in'
+									},
+									styles: {
+										popGesture: 'hide'
+									},
+									createNew: true,
+									waiting: {
+										autoShow: false
+									}
+								});
+							} 
+							return;
+						});
+						app.mainLoadAnnounce(function(err) {
+							if (err) {
+								doc.getElementById("title").innerHTML = "拉拉";
+							} 
+							return;
+						});
+						
+					});
+					var state = app.getState();
+					var data = {};
+					data.readannounceid = state.readannounceid;
+					app.isReadAnnounce(data, function(err) {
+						if (err) {
+							$.openWindow({
+								id: 'announce',
+								url: 'announce.html',
+								show: {
+									aniShow: 'pop-in'
+								},
+								createNew: true,
+								waiting: {
+									autoShow: false
+								}
+							});
+						} 
+						return;
+					});
+					app.mainLoadAnnounce(function(err) {
+						if (err) {
+							doc.getElementById("title").innerHTML = "拉拉";
+						} 
+						return;
+					});
+					
+					doc.getElementById("title").addEventListener("tap", function(){
+						$.openWindow({
+							id: 'announce',
+							url : "announce.html",
+							show: {
+								aniShow: 'pop-in'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					});
+					var settings = app.getSettings();
+					plus.screen.lockOrientation("portrait-primary");
+					
+					var provideButton = doc.getElementById('provide');
+					provideButton.addEventListener('tap', function(event) {
+						$.openWindow({
+							id: 'provide',
+							url: 'provide.html',
+							show: {
+								aniShow: 'pop-in'
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+							createNew: true,
+							waiting: {
+								autoShow: false
+							}
+						});
+					})
+					
+					var acceptButton = doc.getElementById('accept');
+					acceptButton.addEventListener('tap', function(event) {
+						$.openWindow({
+							id: 'accept',
+							url: 'accept.html',
+							show: {
+								aniShow: 'pop-in'
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					})
+					
+					var walletButton = doc.getElementById("wallet");
+					walletButton.addEventListener("tap", function(){
+						$.openWindow({
+							id: 'wallet',
+							url: "wallet.html",
+							show: {
+								aniShow: 'pop-in'
+							},
+							createNew: true,
+							waiting: {
+								autoShow: false
+							}
+						});
+					});
+					// 返回监听
+					$.oldBack = mui.back;
+					var backButtonPress = 0;
+					$.back = function(event) {
+						backButtonPress++;
+						if (backButtonPress > 1) {
+							plus.runtime.quit();
+						} else {
+							plus.nativeUI.toast('再按一次退出应用');
+						}
+						setTimeout(function() {
+							backButtonPress = 0;
+						}, 1000);
+						return false;
+					};
+				});
+				
+			}(mui, document));	
+			
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,57 @@
+html,body {
+	background-color: #efeff4;
+}
+.mui-table-view-cell:after {
+	left:0px;
+}
+.record-list {
+	font-size: 14px;
+}
+.record-badge {
+	width: 40px;
+	height: 40px;
+	float:left;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 40px;
+	font-size: 12px;
+	margin-top: 21px;
+	margin-bottom: 15px;
+}
+.record-number {
+	float:left;
+	width: 54px;
+}
+.record-btn {
+	position: relative;
+	float:right;
+	margin-top: -61px;
+	margin-right: 0px;
+	width: 80px;
+}
+.record-btn .mui-btn {
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.detail-list {
+	font-size: 14px;
+}
+.detail-list li {
+	height: 125px;
+}
+.detail-list .record-btn {
+	margin-top: -100px;
+}
+.get-detail-show {
+	margin:0px !important;
+}
+.mui-table-view-cell.mui-collapse .mui-table-view.get-detail-show .mui-table-view-cell {
+	padding-left:15px;
+}
+.mui-table-view-cell.mui-collapse .mui-table-view.get-detail-show .mui-table-view-cell:after { 
+    left: 0;
+}
+.get-detail-show .record-number {
+	height: 100px;;
+}

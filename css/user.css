@@ -1,0 +1,40 @@
+html,body {
+	background-color: #efeff4;
+}
+.text-header {
+	line-height: 46px;
+}
+.user-name {
+	padding:20px;
+	border-bottom: 1px solid darkgray;
+}
+.user-name p {
+	padding: 0;
+	margin: 0;
+	color: #202020;
+}
+.user-name .username {
+	font-size: 20px;
+	line-height: 30px;
+}
+.user-name .username button.no {
+	font-size: 12px; 
+	line-height: 14px; 
+	padding:10px 15px; 
+	background: darkred; 
+	color: #fff;
+	float: right;
+}
+.optionTable {
+	margin-bottom: 10px;
+}
+.optionTable td {
+	padding:20px 0;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	text-align: center;
+}
+.optionTable td:active {
+	background: #cccccc;
+}
+
