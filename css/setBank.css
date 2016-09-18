@@ -8,20 +8,14 @@ html,body {
 	text-align: center;
 }
 .set_icon {
-	float:left;
-	padding: 20px 20px 20px 30px;
+	float:left;height:100%;width:20%;
 }
 .set_icon span {
-	font-size:40px;
+	font-size:30px;
 }
-.set_icon span.icon-zhifubao {
-	font-size: 50px;
-}
-.set_icon span.icon-pengyou {
-	font-size: 50px;
-}
+
 .set_info {
-	text-align: left;
+	float: left;width:80%
 }
 .set_name {
 	font-size: 20px;
@@ -29,5 +23,21 @@ html,body {
 .set_detail p {
 	color:#fff;
 	margin: 0;
-	line-height: 30px;
+	font-size: 12px;
 }
+.set_info{font-size: 12px;}
+.mui-content{width:100%;}
+.bag{height:auto;width:90%;
+	background: -moz-linear-gradient(45deg, #f55c81, #d96578);
+	background: -o-linear-gradient(45deg, #f55c81, #d96578);
+	background: -webkit-linear-gradient(45deg, #f55c81, #d96578);
+	background: linear-gradient(45deg, #f55c81, #d96578);
+	margin:0 auto;border-radius: 10px;margin-bottom:15px;
+	display: table;padding:15px;margin-top:bottom;}
+.bag1{background: linear-gradient(45deg,#66c7b7,#3d83c6)}
+.bag2{background: linear-gradient(45deg,#5fa7fc,#c07efe)}
+
+
+.bag .set_icon .iconfont img{width:40px;height:40px;margin: 5px;}
+.set_name{font-size:16px;color:#fff;line-height: 30px;margin-left: 10px;}
+.set_detail p{font-size:14px;color:#fff;margin-left: 10px;}

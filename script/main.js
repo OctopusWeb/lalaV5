@@ -47,10 +47,10 @@
 					$.each(_.data, function(k,v) {
 						var tmpl = '';
 						tmpl += '<div class="list-line"><div class="deal-block '+(v.d_type == 3 ? 'accept_block':'provide_block')+'" id="'+v.d_id+'" type="'+v.d_type+'">';
-						tmpl += '	<div class="deal_x_left"><div class="deal_head">'+(type == 1 ? '提供帮助' : '得到帮助')+'</div>';
+						tmpl += '	<div class="deal_x_left"><img src="images/nav'+(type == 1 ? '1' : '3')+'.jpg"/><div class="deal_head">'+'</div>';
 						tmpl += '	<div class="deal_number">'+v.d_number+'</div></div>';
 						tmpl += '	<div class="deal_x_right"><div class="deal_icon">';
-						tmpl += '		<span class="'+(v.d_type == 3 ? 'accept_deal' : ( v.d_type == 1 ? 'static_deal':'dynamic_deal'))+'">'+(v.d_type == 3 ? '得': (v.d_type == 1 ? '静':'动'))+'</span>';
+						tmpl += '		<span class="'+(v.d_type == 3 ? 'accept_deal' : ( v.d_type == 1 ? 'static_deal':'dynamic_deal'))+'">'+(v.d_type == 3 ? '得': (v.d_type == 1 ? '':''))+'</span>';
 						tmpl += '	</div></div>';
 						tmpl += '	<div class="deal_divider"></div>';
 						tmpl += '	<div class="deal_line">';

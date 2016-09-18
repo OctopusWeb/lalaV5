@@ -24,7 +24,7 @@
 					var cntStr = "";
 					$.each(_.data, function(k,v) {
 						var tmpl = '';
-						tmpl += '<li class="mui-table-view-cell" style="height:103px">';
+						tmpl += '<li class="mui-table-view-cell" style="height:103px;">';
 						tmpl += '	<div class="record-number">';
 						tmpl += '		<span class="record-badge mui-badge-success">'+(k+1)+'</span>';
 						tmpl += '	</div>';
@@ -78,7 +78,7 @@
 					var cntStr = "";
 					$.each(_.data, function(k,v) {
 						var tmpl = '';
-						tmpl += '<li class="mui-table-view-cell" log-id="'+v.l_id+'">';
+						tmpl += '<li class="mui-table-view-cell" style="background:#eee;" log-id="'+v.l_id+'">';
 						tmpl += '	<div class="record-number">';
 						tmpl += '		<span class="record-badge mui-badge-success">'+(k+1)+'</span>';
 						tmpl += '	</div>';

@@ -10,35 +10,67 @@
 
 		<link rel="stylesheet" href="css/mui.min.css">
 		<link rel="stylesheet" href="css/common.css">
-		<link rel="stylesheet" href="css/expanded.css">
+		<link rel="stylesheet" href="css/expanded.css"> 
 	</head>
-
+	<style type="text/css">
+			.mui-bar{height: 60px;padding-top: 20px;background: #077bbe;box-shadow: none;}
+			.mui-bar a{color: #fff;}
+			.mui-title{color: #fff;font-weight: 600;}
+			
+			#mui_nav{background: none;height: 30px;}
+			#mui_nav a{width: 25%;position: relative;background: #fff;border-top: 1px #ccc solid;height: 60px;}
+			#mui_nav img{position: absolute;width: 20px;left: 50%;margin-left: -10px;top: 10px;}
+			#mui_nav span{color: #727272;font-size: 14px;float: left;width: 100%;margin-top: 20px;}
+			#mui-tab-label1{color: #077bbe;}
+			
+			.mui-content{margin-top: 10px;}
+			.user-name{background: #077bbe;height: 120px;position: relative;}
+			.user-name img{width: 80px;float: left;border-radius: 50%;margin-top: 5px;}
+			#username{color: #fff;float: left;margin-top: 10px;margin-left: 15px;}
+			#jointime{color: #fff;float: left;margin-left: 10px;margin-top: 15px;}
+			#qiandao{position: absolute;top: 70px;left: 115px;border: none;}
+			#group{position: absolute;top: 70px;left: 215px;color: #fff;border-radius: 8px;font-size: 12px;}
+			
+			
+			.activate{background: #fff;margin-top: 10px;height: 50px;}
+			.activate .activate_count{background: none;margin-top: -15px;}
+			.activate .activate_count label{background: none;color: #077bbe;}
+			#activate_count{color: #077bbe;}
+			
+			.activate #sell_activate{background: none;border: none;color: #077bbe;margin-top: -15px;}
+			.mui-segmented-control{top: -10px;} 
+			
+			.mui-slider-group .mui-table-view th{color: #888888;}	
+			.mui-slider-group .mui-table-view td{color: #888888;}
+			.itemCount{display: none;}	
+	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-			<h1 id="title" class="mui-title">推广中心</h1>
+			<h1 id="title" class="mui-title">推广中心</h1> 
 		</header>
-		<nav class="mui-bar mui-bar-tab">
+		<nav class="mui-bar mui-bar-tab" id="mui_nav">
 			<a class="home-tab-item mui-active" id="index_main">
-				<span class="mui-icon iconfont icon-pengyou"></span>
+				<img src="images/icon1.png"/>
 				<span class="mui-tab-label">互助</span>
 			</a>
 			<a class="home-tab-item" id="index_expanded">
-				<span class="mui-icon iconfont icon-tuiguang"></span>
-				<span class="mui-tab-label">推广</span>
+				<img src="images/icon21.png"/>
+				<span class="mui-tab-label" style="color: #077bbe;">推广</span>
 			</a>
 			<a class="home-tab-item" id="index_shop">
-				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<img src="images/icon3.png"/>
 				<span class="mui-tab-label">商城</span>
 			</a>
 			<a class="home-tab-item" id="index_user">
-				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
+				<img src="images/icon4.png"/>
 				<span class="mui-tab-label">个人</span>
 			</a>
 		</nav>
 		<div class="mui-content">
 			<div class="expand-user">
 				<div class="user-name">
+					<img src="images/head.jpg"/>
 					<p class="username">
 						<span id="username"></span>
 						<button type="button" id="qiandao" class="yes">已签到</button>
@@ -52,22 +84,22 @@
 						<span id="activate_count">0</span>
 					</div>
 					<button type="button" id="sell_activate">
-						激活码转让
+						激活码转让 》
 					</button>
 				</div>
 			</div>
 			<div id="segmentedControl" class="mui-segmented-control" style="margin-top: 20px;width: 98%;margin-left: 1%;">
 				<a class="mui-control-item mui-active" href="#item1mobile">
 					团队一
-					<span class="mui-badge mui-badge-warning" id="item1Count">0</span>
+					<span class="mui-badge mui-badge-warning itemCount" id="item1Count">0</span>
 				</a>
 				<a class="mui-control-item" href="#item2mobile">
 					团队二
-					<span class="mui-badge mui-badge-warning" id="item2Count">0</span>
+					<span class="mui-badge mui-badge-warning itemCount" id="item2Count">0</span>
 				</a>
 				<a class="mui-control-item" href="#item3mobile">
 					团队三
-					<span class="mui-badge mui-badge-warning" id="item3Count">0</span>
+					<span class="mui-badge mui-badge-warning itemCount" id="item3Count">0</span>
 				</a>
 			</div>
 			<div id="slideProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
@@ -153,7 +185,7 @@
 							return;
 						}
 						username.innerHTML = state.truename;
-						jointime.innerHTML = "加入时间："+state.jointime;
+						jointime.innerHTML = ""+state.jointime;
 						group.innerHTML = '<i class="iconfont icon-xunzhang"></i>'+state.group;
 						activateCount.innerHTML = state.activate_count;
 						if(state.lastsign == null) {

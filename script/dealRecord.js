@@ -36,11 +36,11 @@
 						
 						var tmpl = '';
 						tmpl += '<li class="mui-table-view-cell">';
-						tmpl += '	<div class="record-number">';
+						tmpl += '	<div class="record-number">'; 
 						tmpl += '		<span class="record-badge mui-badge-'+colorClass+'">'+(k+1)+'</span>';
 						tmpl += '	</div>';
 						tmpl += '	<div class="record-info">';
-						tmpl += '		<p>订单编号：'+v.d_number+' <span class="mui-badge mui-badge-'+colorClass+'">'+(v.d_type == 3 ? '得': (v.d_type == 1 ? '静':'动'))+'</span></p>';
+						tmpl += '		<p>订单编号：'+v.d_number+'</p>';
 						tmpl += '		<p>'+(v.d_type == 3 ? '得到':'提供')+'金额：'+parseInt(v.d_money)+'</p>';
 						tmpl += '		<p>申请时间：'+(formatLongDate(v.d_inputtime))+'</p>';
 						tmpl += '	</div>';

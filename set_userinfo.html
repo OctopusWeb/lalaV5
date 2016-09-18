@@ -13,29 +13,41 @@
 		<link rel="stylesheet" href="css/setUserinfo.css">
 		<link rel="stylesheet" href="css/uploadImages.css">
 	</head>
-
+	<style type="text/css">
+		.mui-bar{height: 60px;padding-top: 20px;background: #077bbe;box-shadow: none;}
+			.mui-bar a{color: #fff;}
+			.mui-title{color: #fff;font-weight: 600;}
+			
+			#mui_nav{background: none;height: 30px}
+			#mui_nav a{width: 25%;position: relative;background: #fff;border-top: 1px #ccc solid;height: 60px;}
+			#mui_nav img{position: absolute;width: 20px;left: 50%;margin-left: -10px;top: 10px;}
+			#mui_nav span{color: #727272;font-size: 14px;float: left;width: 100%;margin-top: 20px;}
+			#mui-tab-label1{color: #077bbe;}
+			
+			.mui-content{margin-top:15px;}
+	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 id="title" class="mui-title">编辑资料</h1>
 		</header>
 	     
-		<nav class="mui-bar mui-bar-tab">
-			<a class="home-tab-item mui-active" id="index_main">
-				<span class="mui-icon iconfont icon-pengyou"></span>
-				<span class="mui-tab-label">互助</span>
+		<nav class="mui-bar mui-bar-tab" id="mui_nav">
+			<a class="home-tab-item" id="index_main">
+				<img src="images/icon1.png"/>
+				<span class="mui-tab-label" >互助</span>
 			</a>
 			<a class="home-tab-item" id="index_expanded">
-				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<img src="images/icon2.png"/> 
 				<span class="mui-tab-label">推广</span>
 			</a>
 			<a class="home-tab-item" id="index_shop">
-				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<img src="images/icon3.png"/>
 				<span class="mui-tab-label">商城</span>
 			</a>
 			<a class="home-tab-item" id="index_user">
-				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
-				<span class="mui-tab-label">个人</span>
+				<img src="images/icon41.png"/>
+				<span class="mui-tab-label" style="color: #077bbe;">个人</span>
 			</a>
 		</nav>
 		<div class="mui-content" style="padding-bottom: 0;">
@@ -132,7 +144,7 @@
 			</div>
 		</div>
 		<div class="mui-content-padded">
-			<button id='submit' type="button" class="mui-btn mui-btn-block mui-btn-green">提交</button>
+			<button id='submit' type="button" class="mui-btn mui-btn-block">提交</button>
 		</div>
 	</body>
 	<script src="js/mui.min.js"></script>
@@ -152,6 +164,10 @@
 			});
 			
 			initData = function(state) {
+				if(state.idcard !="" || state.idcard){
+					plus.nativeUI.toast("您已编辑过个人资料，请勿重复编辑！");
+					mui.back();
+				}
 				if(typeof state.truename != "undefined" && state.truename != null && state.truename != "") {
 					doc.getElementById("truename").value = state.truename;
 				}

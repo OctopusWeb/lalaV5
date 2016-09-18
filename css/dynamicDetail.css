@@ -38,16 +38,19 @@ html,body {
 	font-size: 14px;
 }
 .detail-list li {
-	height: 125px;
+	height: 125px; background: red;
 }
 .detail-list .record-btn {
 	margin-top: -100px;
 }
 .get-detail-show {
-	margin:0px !important;
+	margin:0!important;
 }
-.mui-table-view-cell.mui-collapse .mui-table-view.get-detail-show .mui-table-view-cell {
-	padding-left:15px;
+/*.mui-table-view-cell {margin:0;padding: 0;}*/
+.mui-table-view-cell .mui-collapse{width:100%;background: #000;!important}
+.mui-table-view-cell .mui-collapse .mui-table-view{width:100%;}
+.mui-table-view-cell .mui-collapse .mui-table-view .get-detail-show .mui-table-view-cell {
+	width:100%!important;background: yellow;
 }
 .mui-table-view-cell.mui-collapse .mui-table-view.get-detail-show .mui-table-view-cell:after { 
     left: 0;
@@ -55,3 +58,12 @@ html,body {
 .get-detail-show .record-number {
 	height: 100px;;
 }
+.mui-segmented-control{border:none;margin-top:10px;margin-bottom: 10px;background: #fff;}
+.mui-control-item{border:none!important;color:#333!important;}
+.mui-active{background: none!important;color: #007aff!important;border-bottom: 2px solid #007aff!important;}
+#record1mobile{border-bottom:none!important;}
+#record3mobile{border-bottom:none!important;}
+#record1mobile .mui-active{border-bottom:none!important;}
+#record3mobile .mui-active{border-bottom:none!important;}
+.record-number .record-badge{background: #077BBE;font-size: 18px;}
+

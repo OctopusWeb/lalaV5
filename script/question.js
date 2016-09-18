@@ -13,7 +13,7 @@
 						var tmpl = "";
 						tmpl += '<div class="mui-card">';
 						tmpl += '	<div class="mui-card-header mui-card-media">';
-						tmpl += '		<img src="images/logo.png" />';
+						tmpl += '		<img src="images/what.jpg" />';
 						tmpl += '		<div class="mui-media-body">'+v.a_title+'<p>发表于 '+(formatLongDate(v.a_inputtime))+'</p></div>';
 						tmpl += '	</div>';
 						tmpl += '	<div class="mui-card-content">';

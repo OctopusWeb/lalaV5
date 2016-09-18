@@ -31,7 +31,7 @@
 					
 					owner.setState(nState);
 					return callback();
-				}
+				} 
 			}, "json");
 		}else{
 			callback("当前网络不给力，请稍后再试...");
@@ -49,7 +49,7 @@
 		var tokenState = owner.getState();
 		param.token = tokenState.token;
 		
-		if (param.username == "") {
+		if (param.username == "") { 
 			return callback('账号错误！');
 		}
 		if (param.level != 1 && param.level != 2 && param.level != 3) {
@@ -62,6 +62,7 @@
 					owner.restartLogin(_);
 					return callback(_.msg);
 				} else {
+					console.log(JSON.stringify(_)) 
 					cntStr = "";
 					var provideStr = 'mui-badge mui-badge-success';
 					var acceptStr = 'mui-badge mui-badge-warning';

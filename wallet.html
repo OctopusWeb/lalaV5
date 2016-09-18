@@ -10,29 +10,41 @@
 
 		<link rel="stylesheet" href="css/mui.min.css">
 		<link rel="stylesheet" href="css/common.css">
-		<link rel="stylesheet" href="css/wallet.css">
-	</head>
-
+		<link rel="stylesheet" href="css/walletNew.css">
+	</head>	
+	<style type="text/css">
+			.mui-bar{height: 60px;padding-top: 20px;background: #077bbe;box-shadow: none;}
+			.mui-bar a{color: #fff;}
+			.mui-title{color: #fff;font-weight: 600;}
+			
+			#mui_nav{background: none;height: 30px}
+			#mui_nav a{width: 25%;position: relative;background: #fff;border-top: 1px #ccc solid;height: 60px;}
+			#mui_nav img{position: absolute;width: 20px;left: 50%;margin-left: -10px;top: 10px;}
+			#mui_nav span{color: #727272;font-size: 14px;float: left;width: 100%;margin-top: 20px;}
+			#mui-tab-label1{color: #077bbe;}
+			
+			.mui-content{margin-top: 20px;}
+	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 id="title" class="mui-title">钱包总览</h1>
 		</header>
-		<nav class="mui-bar mui-bar-tab">
+		<nav class="mui-bar mui-bar-tab" id="mui_nav">
 			<a class="home-tab-item mui-active" id="index_main">
-				<span class="mui-icon iconfont icon-pengyou"></span>
-				<span class="mui-tab-label">互助</span>
+				<img src="images/icon11.png"/>
+				<span class="mui-tab-label"  style="color: #077bbe;">互助</span>
 			</a>
 			<a class="home-tab-item" id="index_expanded">
-				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<img src="images/icon2.png"/> 
 				<span class="mui-tab-label">推广</span>
 			</a>
 			<a class="home-tab-item" id="index_shop">
-				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<img src="images/icon3.png"/>
 				<span class="mui-tab-label">商城</span>
 			</a>
 			<a class="home-tab-item" id="index_user">
-				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
+				<img src="images/icon4.png"/>
 				<span class="mui-tab-label">个人</span>
 			</a>
 		</nav>
@@ -40,9 +52,9 @@
 			<div class="title">
 				点击对应钱包可看到该钱包的详细记录
 			</div>
-			<button class="mui-btn mui-btn-block set_btn mui-btn-green" id='staticWallet'>
+			<div class="bag" id='staticWallet'>
 				<div class="set_icon">
-					<span class="iconfont icon-tubiao"></span>
+					<span class="iconfont"><img src="images/jingtai-icon.png"/></span>
 				</div>
 				<div class="set_info">
 					<div class="set_name">静态钱包</div>
@@ -50,10 +62,10 @@
 						<p>0.00</p>
 					</div>
 				</div>
-			</button>
-			<button class="mui-btn mui-btn-block set_btn mui-btn-warning" id='dynamicWallet'>
+			</div>
+			<div class="bag" id='dynamicWallet'>
 				<div class="set_icon">
-					<span class="iconfont">&#xe6ba;</span>
+					<span class="iconfont"><img src="images/dongtai-icon.png"/></span>
 				</div>
 				<div class="set_info">
 					<div class="set_name">动态钱包</div>
@@ -61,10 +73,10 @@
 						<p>0.00</p>
 					</div>
 				</div>
-			</button>
-			<button class="mui-btn mui-btn-block set_btn mui-btn-primary" id='frozenWallet'>
+			</div>
+			<div class="bag" id='frozenWallet'>
 				<div class="set_icon">
-					<span class="iconfont icon-wodeqianbaodongjiezhong" style="font-size: 45px;"></span>
+					<span class="iconfont"><img src="images/dongjie-icon.png"/></span>
 				</div>
 				<div class="set_info">
 					<div class="set_name">冻结钱包</div>
@@ -72,7 +84,7 @@
 						<p>0.00</p>
 					</div>
 				</div>
-			</button>
+			</div>
 		</div>
 	</body>
 	<script src="js/mui.min.js"></script>

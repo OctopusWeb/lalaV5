@@ -11,84 +11,117 @@
 		<link rel="stylesheet" href="css/mui.min.css">
 		<link rel="stylesheet" href="css/common.css">
 		<link rel="stylesheet" href="css/user.css">
-
-		
 	</head>
-
+	<style type="text/css">
+		.mui-navigate-right:after, .mui-push-left:after, .mui-push-right:after{font-size: 18px;}
+		.mui-bar{height: 60px;padding-top: 20px;background: #077bbe;box-shadow: none;}
+			.mui-bar a{color: #fff;}
+			.mui-title{color: #fff;font-weight: 600;}
+			
+			#mui_nav{background: none;height: 30px}
+			#mui_nav a{width: 25%;position: relative;background: #fff;border-top: 1px #ccc solid;height: 60px;}
+			#mui_nav img{position: absolute;width: 20px;left: 50%;margin-left: -10px;top: 10px;}
+			#mui_nav span{color: #727272;font-size: 14px;float: left;width: 100%;margin-top: 20px;}
+			#mui-tab-label1{color: #077bbe;}
+			
+			.mui-content{margin-top:15px;}
+			.mui-icon-arrowright{float: right;margin-top: 10px;color: #ccc;}
+	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a id="record" class="mui-pull-left text-header">记录</a>
 			<h1 id="title" class="mui-title">个人中心</h1>
 			<!--<a id="share" class="mui-pull-right text-header">分享</a>-->
 		</header>
-		<nav class="mui-bar mui-bar-tab">
+		<nav class="mui-bar mui-bar-tab" id="mui_nav">
 			<a class="home-tab-item mui-active" id="index_main">
-				<span class="mui-icon iconfont icon-pengyou"></span>
-				<span class="mui-tab-label">互助</span>
+				<img src="images/icon1.png"/>
+				<span class="mui-tab-label" >互助</span>
 			</a>
 			<a class="home-tab-item" id="index_expanded">
-				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<img src="images/icon2.png"/> 
 				<span class="mui-tab-label">推广</span>
 			</a>
 			<a class="home-tab-item" id="index_shop">
-				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<img src="images/icon3.png"/>
 				<span class="mui-tab-label">商城</span>
 			</a>
 			<a class="home-tab-item" id="index_user">
-				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
-				<span class="mui-tab-label">个人</span>
+				<img src="images/icon41.png"/>
+				<span class="mui-tab-label" style="color: #077bbe;">个人</span>
 			</a>
 		</nav>
 		<div class="mui-content">
 			<div class="expand-user">
 				<div class="user-name">
-					<p class="username">
-						<span id="username"></span>
-						<button type="button" class="no" id="group"></button>
-					</p>
-					<p id="jointime"></p>
-					<p id="telephone"></p>
-					<p id="parent"></p>
+					<div class="headImg">
+						<img src="images/headImg.png"/>
+						<div class="name">
+							<span id="username"></span>
+							<button type="button" class="no" id="group"></button>
+						</div>
+					</div>					 
+					<div class="user-info">
+						<p id="jointime"></p>
+						<p id="telephone"></p>
+						<p id="parent"></p>
+					</div>
 				</div>
 			</div>
 			<table class="mui-table-view optionTable" cellpadding="0" cellspacing="0" border="0" width="99.99%">
 				<tr>
-					<td class="mui-table-cell" width="50%" id="changePassword">
-						<span class="iconfont icon-zhanghao" style="color:#bd1540; font-size: 30px; margin-right:5px; vertical-align: middle;"></span>
-						修改密码
-					</td>
-					<td class="mui-table-cell" width="50%" id="setBank">
-						<span class="iconfont icon-yinxingqia" style="color:#2b7531; font-size: 20px; margin-right:5px; vertical-align: middle;"></span>
-						收款方式
+					<td class="mui-table-cell" width="100%" id="changePassword">
+						<span class="iconfont1 icon1"></span>
+						<p>修改密码</p>
+						<span class=" mui-icon-arrowright mui-icon"></span>
+					</td>					
+				</tr>
+				<tr>
+					<td class="mui-table-cell" width="100%" id="setBank">
+						<span class="iconfont1 icon2"></span>
+						<p>收款方式</p>
+						<span class=" mui-icon-arrowright mui-icon"></span>
 					</td>
 				</tr>
 				<tr>
-					<td class="mui-table-cell" width="50%" id="questions">
-						<span class="iconfont icon-q-a" style="color:#4899cd; font-size: 30px; margin-right:5px; vertical-align: middle;"></span>
-						常见问题
+					<td class="mui-table-cell" width="100%" id="questions">
+						<span class="iconfont1 icon3"></span>
+						<p>常见问题</p>
+						<span class=" mui-icon-arrowright mui-icon"></span>
 					</td>
-					<td class="mui-table-cell" width="50%" id="cashDetail">
-						<span class="iconfont icon-suodeshui" style="color:#eb8523; font-size: 30px; margin-right:5px; vertical-align: middle;"></span>
-						奖金明细
+				</tr>
+				<tr>
+					<td class="mui-table-cell" width="100%" id="cashDetail">
+						<span class="iconfont1 icon4"></span>
+						<p>奖金明细</p>
+						<span class=" mui-icon-arrowright mui-icon"></span>
 					</td>
 				</tr>
 			</table>
 			<table class="mui-table-view optionTable" cellpadding="0" cellspacing="0" border="0" width="99.99%">
 				<tr>
 					<td class="mui-table-cell" width="50%" id="guestbook">
-						<span class="iconfont icon-liuyan" style="color:#35753c; font-size: 30px; margin-right:5px; vertical-align: middle;"></span>
-						系统留言
+						<span class="iconfont1 icon5"></span>
+						<p>系统留言</p>
+						<span class=" mui-icon-arrowright mui-icon"></span>
 					</td>
+				</tr>
+				<tr>
 					<td class="mui-table-cell" width="50%" id="systemNote">
-						<span class="iconfont icon-tongzhi" style="color:#d6281d; font-size: 30px; margin-right:5px; vertical-align: middle;"></span>
-						系统通知
+						<span class="iconfont1 icon6"></span>
+						<p>系统通知</p>
+						<span class=" mui-icon-arrowright mui-icon"></span>
+					</td>
+				</tr>
+				<tr class="exit">
+					<td class="mui-table-cell" id='exit' width="50%" id="systemNote">
+						<span class="iconfont1 icon7"></span>
+						<p>退出</p>
+						
 					</td>
 				</tr>
 			</table>
-		</div>
-		<div class="mui-content-padded">
-			<button id='exit' class="mui-btn mui-btn-block mui-btn-primary">退出</button>
-		</div>
+		</div>		
 	</body>
 	<script src="js/mui.min.js"></script>
 	<script src="js/app.js"></script>

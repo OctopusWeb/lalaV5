@@ -1,5 +1,6 @@
 html,body {
 	background-color: #efeff4;
+	list-style: none
 }
 .provide {
 	width: 33.33%;
@@ -45,51 +46,30 @@ html,body {
 	clear: both;
 	float:left;
 	width: 100%;
-	padding: 5px;
 }
 .list-left {
 	list-style: none;
 	float: left;
 	width: 50%;
 	padding:0;
-	margin:0
+	margin:0;
 }
-.list-right {
+/*.list-right {
 	list-style: none;
 	float:right;
 	width: 50%;
 	padding:0;
 	margin:0
-}
+}*/
 .deal-block {
 	width: 100%;
-	border-radius: 10px;
-	height: 120px;
-	margin-bottom : 10px;
+	height: 80px;
+	background: #fff;
+	border-bottom: 1px #ccc solid;
 }
 
 .list-line{padding: 5px 5px 1px 10px;background: #B1AFAF;margin-bottom: 5px;}
 
-.provide_block {
-	background: #ffffff;
-    background: -moz-linear-gradient(top,  #ffffff -10%, #0a9400 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(-10%,#ffffff), color-stop(100%,#0a9400));
-    background: -webkit-linear-gradient(top,  #ffffff -10%,#0a9400 100%);
-    background: -o-linear-gradient(top,  #ffffff -10%,#0a9400 100%);
-    background: -ms-linear-gradient(top,  #ffffff -10%,#0a9400 100%);
-    background: linear-gradient(to bottom,  #ffffff -10%,#0a9400 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#0a9400',GradientType=0 );
-}
-.accept_block {
-	background: #ffffff;
-    background: -moz-linear-gradient(top,  #ffffff -10%, #ECA503 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(-10%,#ffffff), color-stop(100%,#ECA503));
-    background: -webkit-linear-gradient(top,  #ffffff -10%,#ECA503 100%);
-    background: -o-linear-gradient(top,  #ffffff -10%,#ECA503 100%);
-    background: -ms-linear-gradient(top,  #ffffff -10%,#ECA503 100%);
-    background: linear-gradient(to bottom,  #ffffff -10%,#ECA503 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ECA503',GradientType=0 );
-}
 
 .deal-block .deal_head {
 	margin-left:10px;
@@ -121,32 +101,33 @@ html,body {
 }
 .deal-block .deal_icon span.accept_deal {
 }
-
+/*
 .deal-block .deal_divider {
-	border-bottom: 1px solid #fff;
+	border-bottom: 1px solid #ccc;
 	float: left;
-	width: 90%;
-	margin: 4px 5% 0 5%;
-}
+	width: 100%;
+	background: #fff;
+}*/
 .deal-block .deal_line {
+	padding-top: 10px;
 	float: left;
-	padding: 6px 0 0 6px;
+	width: 45%;
 }
 .deal-block .deal_line p {
-	color: #ffffff;
+	color: #727272;
 	line-height: 15px;
 	margin-bottom: 3px;
 	width: 100%;
 	float: left;
 }
 .deal-block .deal_line p .state {
-	float:right;
+	position: absolute;
+	right: 5px;
+	background: #ff526e;
+	color: #fff;
 	font-size: 12px;
-	margin-top: -3px;
-	margin-right: 8px;
-	line-height: 12px;
-	padding: 3px 3px 2px 2px;
-	border:1px solid #fff;
+	padding: 3px 10px;
+	border-radius: 5px;
 }
 
 .pa-list {

@@ -12,38 +12,50 @@
 		<link rel="stylesheet" href="css/common.css">
 		<link rel="stylesheet" href="css/setBank.css">
 	</head>
-
+	<style type="text/css">
+		.mui-bar{height: 60px;padding-top: 20px;background: #077bbe;box-shadow: none;}
+			.mui-bar a{color: #fff;}
+			.mui-title{color: #fff;font-weight: 600;}
+			
+			#mui_nav{background: none;height: 30px}
+			#mui_nav a{width: 25%;position: relative;background: #fff;border-top: 1px #ccc solid;height: 60px;}
+			#mui_nav img{position: absolute;width: 20px;left: 50%;margin-left: -10px;top: 10px;}
+			#mui_nav span{color: #727272;font-size: 14px;float: left;width: 100%;margin-top: 20px;}
+			#mui-tab-label1{color: #077bbe;}
+			
+			.mui-content{margin-top:15px;}
+	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 id="title" class="mui-title">收款方式</h1>
 			<a id="editInfo" class="mui-pull-right" style="line-height: 46px;">修改</a>
 		</header>
-		<nav class="mui-bar mui-bar-tab">
-			<a class="home-tab-item mui-active" id="index_main">
-				<span class="mui-icon iconfont icon-pengyou"></span>
-				<span class="mui-tab-label">互助</span>
+		<nav class="mui-bar mui-bar-tab" id="mui_nav">
+			<a class="home-tab-item" id="index_main">
+				<img src="images/icon1.png"/>
+				<span class="mui-tab-label" >互助</span>
 			</a>
 			<a class="home-tab-item" id="index_expanded">
-				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<img src="images/icon2.png"/> 
 				<span class="mui-tab-label">推广</span>
 			</a>
 			<a class="home-tab-item" id="index_shop">
-				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<img src="images/icon3.png"/>
 				<span class="mui-tab-label">商城</span>
 			</a>
 			<a class="home-tab-item" id="index_user">
-				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
-				<span class="mui-tab-label">个人</span>
+				<img src="images/icon41.png"/>
+				<span class="mui-tab-label" style="color: #077bbe;">个人</span>
 			</a>
 		</nav>
 		<div class="mui-content">
 			<div class="title">
 				请填写您的账号，以便你能及时收到打款！
 			</div>
-			<button class="mui-btn mui-btn-block mui-btn-green">
+			<div class="bag">
 				<div class="set_icon">
-					<span class="iconfont icon-yinxingqia"></span>
+					<span class="iconfont"><img src="images/jingtai-icon.png" alt="" /></span>
 				</div>
 				<div class="set_info">
 					<div class="set_name">银行储蓄卡卡号</div>
@@ -52,10 +64,10 @@
 						<p></p>
 					</div>
 				</div>
-			</button>
-			<button class="mui-btn mui-btn-block mui-btn-warning">
+			</div>
+			<div class="bag bag1">
 				<div class="set_icon">
-					<span class="iconfont icon-zhifubao"></span>
+					<span class="iconfont"><img src="images/zhiubao.png"/></span>
 				</div>
 				<div class="set_info">
 					<div class="set_name">支付宝账号</div>
@@ -63,10 +75,10 @@
 						<p></p>
 					</div>
 				</div>
-			</button>
-			<button class="mui-btn mui-btn-block mui-btn-red">
+			</div>
+			<div class="bag bag2">
 				<div class="set_icon">
-					<span class="iconfont icon-pengyou"></span>
+					<span class="iconfont class="pay"><img src="images/pay.png" alt="" /></span>
 				</div>
 				<div class="set_info">
 					<div class="set_name">拉拉币账号</div>
@@ -74,7 +86,7 @@
 						<p></p>
 					</div>
 				</div>
-			</button>
+			</div>
 		</div>
 	</body>
 	<script src="js/mui.min.js"></script>

@@ -21,8 +21,8 @@
 				} else {
 					document.querySelector("#cash").placeholder = _.data.tips;
 					document.querySelector("#notice-content").innerHTML = _.data.notice;
-					document.querySelector("#static-fee").innerHTML = "您的静态钱包有 "+_.data.static_fee + " 余额";
-					document.querySelector("#dynamic-fee").innerHTML = "您的动态钱包有 "+_.data.dynamic_fee + " 余额";
+					document.querySelector("#static-fee").innerHTML = "有 "+_.data.static_fee + " 余额";
+					document.querySelector("#dynamic-fee").innerHTML = "有 "+_.data.dynamic_fee + " 余额";
 					return callback();
 				}
 			}, 'json');

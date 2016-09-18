@@ -16,6 +16,7 @@
 					tokenState.readannounceid = _.data.a_id;
 					owner.setState(tokenState);
 					document.querySelector("#announce-title").innerHTML = _.data.a_title;
+					document.querySelector("#announce-title1").innerHTML = _.data.a_title;
 					document.querySelector("#announce-content").innerHTML = _.data.a_content;
 					return callback();
 				}

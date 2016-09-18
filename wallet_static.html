@@ -12,32 +12,45 @@
 		<link rel="stylesheet" href="css/common.css">
 		<link rel="stylesheet" href="css/staticDetail.css">
 	</head>
+	<style type="text/css">
+		.mui-bar{height: 60px;padding-top: 20px;background: #077bbe;box-shadow: none;}
+			.mui-bar a{color: #fff;}
+			.mui-title{color: #fff;font-weight: 600;}
+			
+			#mui_nav{background: none;height: 30px}
+			#mui_nav a{width: 25%;position: relative;background: #fff;border-top: 1px #ccc solid;height: 60px;}
+			#mui_nav img{position: absolute;width: 20px;left: 50%;margin-left: -10px;top: 10px;}
+			#mui_nav span{color: #727272;font-size: 14px;float: left;width: 100%;margin-top: 20px;}
+			#mui-tab-label1{color: #077bbe;}
+			
+			.mui-content{margin-top:20px;}
+	</style>
 
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 id="title" class="mui-title">静态钱包明细</h1>
 		</header>
-		<nav class="mui-bar mui-bar-tab">
+		<nav class="mui-bar mui-bar-tab" id="mui_nav">
 			<a class="home-tab-item" id="index_main">
-				<span class="mui-icon iconfont icon-pengyou"></span>
-				<span class="mui-tab-label">互助</span>
+				<img src="images/icon11.png"/>
+				<span class="mui-tab-label"  style="color: #077bbe;">互助</span>
 			</a>
 			<a class="home-tab-item" id="index_expanded">
-				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<img src="images/icon2.png"/> 
 				<span class="mui-tab-label">推广</span>
 			</a>
 			<a class="home-tab-item" id="index_shop">
-				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<img src="images/icon3.png"/>
 				<span class="mui-tab-label">商城</span>
 			</a>
 			<a class="home-tab-item" id="index_user">
-				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
+				<img src="images/icon4.png"/>
 				<span class="mui-tab-label">个人</span>
 			</a>
 		</nav>
 		<div class="mui-content">
-			<div id="segmentedControl" class="mui-segmented-control" style="margin:15px 0;width: 98%;margin-left: 1%;">
+			<div id="segmentedControl" class="mui-segmented-control">
 				<a class="mui-control-item mui-active" href="#record1mobile">
 					未匹配
 				</a>
@@ -48,7 +61,7 @@
 					已完成
 				</a>
 			</div>
-			<div id="slideProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+			<div id="slideProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div> 
 			<div class="mui-slider-group record-list">
 				<div id="record1mobile" class="mui-control-content mui-active">
 					<ul class="mui-table-view" id="unpa_list"></ul>

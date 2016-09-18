@@ -57,3 +57,35 @@
     border-radius: 5px;
     border:1px solid #ccc;
 }
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #fff;  
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #fff;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #fff;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #fff;
+}
+body,html{width: 100%;height: 100%;position: relative;} 
+.mui-content{width: 100%;height: 100%;position: relative;background: linear-gradient(0deg,#05598e,#66cadf)}
+#login-form{background: none;padding-right:20px;}
+#username,#password{color: #fff;font-size: 14px;}
+#login{background: #fff;color: #087ac0;font-weight: 600;border: #087ac0;margin-top: 50px;
+height: 45px;padding-top: 10px;width: 90%;margin-left: 5%;}
+#login-form::after{display: none;}
+#login-form::before{display: none;}
+#login-form .mui-input-row::after{background: #fff;}
+.link-area{text-align: right;padding-right: 20px;}
+#reg{color: #fff;font-size: 12px;text-align: right;}
+.mui-input-group .mui-input-row{margin-top: 15px}
+.mui-input-group .mui-input-row span{font-size: 20px;margin-top: 3px;}
+#zidong{display: none;}

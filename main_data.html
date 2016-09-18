@@ -10,7 +10,18 @@
 		<link rel="stylesheet" href="css/common.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
-
+	<style type="text/css">
+		.list-left{width: 100%;position: relative;}
+		.list-left #info{position: absolute;width: 14px;left: 15px;top: 13px;}
+		.lala-list,.list-left,#provide_list,.list-line{background: none;margin: 0;padding: 0;}
+		.list-left h1{width: 100%;font-size: 14px;color: #077bbe;background: #fff;line-height: 30px;
+		padding-left: 35px;border-bottom: 1px #ccc solid;}
+		
+		.deal_x_left{color: #727272;width: 30%;float: left;position: relative;
+		text-align: center;padding-top: 35px} 
+		.deal_x_left img{width: 40px;float: left;position: absolute;left: 50%;margin-left: -20px;top:5px}
+		
+	</style>
 	<body>
 		<div id="refreshContainer" class="mui-content mui-scroll-wrapper" style="margin-top: 0px; padding-top: 0; border-top: 2px #efefef; float: none; clear:both">
 			<div class="mui-scroll">
@@ -18,6 +29,8 @@
 					<li>
 						<div class="lala-list">
 							<ul class="list-left">
+								<img src="images/indexInfo.jpg" id="info"/>
+								<h1>帮助信息</h1>
 								<li id="provide_list"></li>
 							</ul>
 							<ul class="list-right">

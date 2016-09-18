@@ -12,29 +12,43 @@
 		<link rel="stylesheet" href="css/common.css"><br />
 		<style type="text/css">
 			html,body { background: #ffffff;}
+			#slider{margin-top:40px;}
+			.mui-media-title{line-height:36px;}
 		</style>
 	</head>
-
+	<style type="text/css">
+			.mui-bar{height: 60px;padding-top: 20px;background: #077bbe;box-shadow: none;}
+			.mui-bar a{color: #fff;}
+			.mui-title{color: #fff;font-weight: 600;}
+			
+			#mui_nav{background: none;height: 30px}
+			#mui_nav a{width: 25%;position: relative;background: #fff;border-top: 1px #ccc solid;height: 60px;}
+			#mui_nav img{position: absolute;width: 20px;left: 50%;margin-left: -10px;top: 10px;}
+			#mui_nav span{color: #727272;font-size: 14px;float: left;width: 100%;margin-top: 20px;}
+			#mui-tab-label1{color: #077bbe;}
+			
+			.mui-content{margin-top:15px;}
+	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 id="title" class="mui-title">商城</h1>
 		</header>
-		<nav class="mui-bar mui-bar-tab">
+		<nav class="mui-bar mui-bar-tab" id="mui_nav">
 			<a class="home-tab-item" id="index_main">
-				<span class="mui-icon iconfont icon-pengyou"></span>
-				<span class="mui-tab-label">互助</span>
+				<img src="images/icon1.png"/>
+				<span class="mui-tab-label" >互助</span>
 			</a>
 			<a class="home-tab-item" id="index_expanded">
-				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<img src="images/icon2.png"/> 
 				<span class="mui-tab-label">推广</span>
 			</a>
 			<a class="home-tab-item" id="index_shop">
-				<span class="mui-icon iconfont icon-shangcheng"></span>
-				<span class="mui-tab-label">商城</span>
+				<img src="images/icon31.png"/>
+				<span class="mui-tab-label"  style="color: #077bbe;">商城</span>
 			</a>
 			<a class="home-tab-item" id="index_user">
-				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
+				<img src="images/icon4.png"/>
 				<span class="mui-tab-label">个人</span>
 			</a>
 		</nav>
@@ -81,13 +95,13 @@
 		<div class="mui-content" style="padding-top:0px; background: #fff;">
 
 			<ul class="mui-table-view mui-grid-view">
-				<li class="mui-table-view-cell mui-media mui-col-xs-6">
-											<div class="lala-list" id="shop-list" style="background: #efeff4;">
+				<li class="mui-table-view-cell mui-media mui-col-xs-12">
+						<div class="lala-list" id="shop-list" style="background: #efeff4;">
 						</div>
 					<a href="javascript:void(0)">
-						<img class="mui-media-object" src="images/shop1.jpg">
-						<div class="mui-media-body">全国手机充值100元电信话费直充快充电信充值</div>       
-						<p class='mui-ellipsis'>信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述</p>
+						<div class="mui-media-title">全国手机充值100元电信话费直充快充电信充值</div> 
+						<img class="mui-media-object" src="images/shangpin.png">
+						      
 					</a>
 				</li>
 			</ul>

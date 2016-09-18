@@ -185,6 +185,21 @@
 				float:left;
 				padding-top: 5px;
 			}
+			
+			.mui-navbar{height: 60px;box-shadow: none;}
+			.mui-navbar .mui-bar{height: 60px;padding-top: 20px;background: #077bbe;}
+			.mui-bar .mui-btn-link{color: #fff;}
+			.mui-title{color: #fff;font-weight: 600;}
+			
+			.mui-content-padded{margin-top: 30px;}
+			.mui-input-row{background: #fff;}
+			.mui-input-row img{float: left;height: 50px;margin-top: 10px;margin-right: 20px;}
+			.mui-input-row h4{line-height:27px;color: #888888;}
+			.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{
+				color: #077bbe;
+			}
+			#next{width: 80%;margin-left: 10%;height: 50px;background: #077bbe;border: none;margin-top: 30px;}
+			
 		</style>
 		<link rel="stylesheet" type="text/css" href="./css/feedback-page.css" />
 	</head>
@@ -207,10 +222,10 @@
 			<div class="mui-page-content">
 				<div class="mui-scroll-wrapper">
 					<div class="mui-scroll">
-						<div class="mui-content-padded" style="background: #fff;">
+						<div class="mui-content-padded">
 							<div class="mui-input-row mui-radio" style="padding: 10px;">
 								<label>
-									<span class="iconfont icon-tubiao icon-static"></span>
+									<img src="images/jingBag.jpg"/>
 									<div class="wallet-info">
 										<h4>静态钱包</h4>
 										<p id="static-fee">您的静态钱包有 0 余额</p>
@@ -220,7 +235,7 @@
 							</div>
 							<div class="mui-input-row mui-radio" style="padding: 10px; border-top:1px solid #ccc">
 								<label>
-									<span class="iconfont icon-dynamic">&#xe6ba;</span>
+									<img src="images/dongBag.jpg"/>
 									<div class="wallet-info">
 										<h4>动态钱包</h4>
 										<p id="dynamic-fee">您的静态钱包有 0 余额</p>

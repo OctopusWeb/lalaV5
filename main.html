@@ -10,43 +10,64 @@
 		<link rel="stylesheet" href="css/common.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
+	<style type="text/css">
+			.mui-bar{height: 60px;padding-top: 20px;background: #077bbe;box-shadow: none;}
+			.mui-bar a{color: #fff;}
+			.mui-title{color: #fff;font-weight: 600;}
 
+	
+			#mui_nav{background: none;height: 30px;}
+			#mui_nav a{width: 25%;position: relative;background: #fff;border-top: 1px #ccc solid;height: 60px;}
+			#mui_nav img{position: absolute;width: 20px;left: 50%;margin-left: -10px;top: 10px;}
+			#mui_nav span{color: #727272;font-size: 14px;float: left;width: 100%;margin-top: 20px;}
+			#mui-tab-label1{color: #077bbe;}
+			
+			.mui-content{margin-top: 20px;background: #fff;}
+			#title{background: #fff;width: 105%;color: #077bbe;height: 35px;font-size: 12px;line-height: 35px;margin-top: -5px;}
+			#banner{float: left;width: 100%;margin-top: 20px;height: 110px;overflow: hidden;}
+			#banner img{float: left;width: 100%;height: auto;}
+			.mui-content a{width: 33.3%;background: #fff;height: auto;padding: 15px 0;}
+			.mui-content a img{width: 40%;}
+	</style>
 	<body>
 		<header class="mui-bar mui-bar-nav">
-			<h1 id="title" class="mui-title" style="overflow-x:-webkit-marquee; font-size: 14px;">拉拉</h1>
+		    <h1 class="mui-title">拉拉V5</h1>
 		</header>
-		<nav class="mui-bar mui-bar-tab">
+		
+		<nav class="mui-bar mui-bar-tab" id="mui_nav">
 			<a class="home-tab-item mui-active" id="index_main">
-				<span class="mui-icon iconfont icon-pengyou"></span>
-				<span class="mui-tab-label">互助</span>
+				<img src="images/icon11.png"/>
+				<span class="mui-tab-label"  style="color: #077bbe;">互助</span>
 			</a>
 			<a class="home-tab-item" id="index_expanded">
-				<span class="mui-icon iconfont icon-tuiguang"></span>
+				<img src="images/icon2.png"/>
 				<span class="mui-tab-label">推广</span>
 			</a>
 			<a class="home-tab-item" id="index_shop">
-				<span class="mui-icon iconfont icon-shangcheng"></span>
+				<img src="images/icon3.png"/>
 				<span class="mui-tab-label">商城</span>
 			</a>
 			<a class="home-tab-item" id="index_user">
-				<span class="mui-icon iconfont icon-gerenzhongxin"></span>
+				<img src="images/icon4.png"/>
 				<span class="mui-tab-label">个人</span>
 			</a>
 		</nav>
 		<div class="mui-content">
-			<a id="provide" class="provide" style="color: green;">
-				<span class="iconfont icon-zhengfuwuchangzijinzizhu verylarge iconfont-home"></span>
-				<span style="icon-text">提供帮助</span>
+			<div class="news">
+				<h1 id="title" class="mui-title" style="overflow-x:-webkit-marquee; font-size: 14px;">拉拉V5</h1>
+			</div>
+			<div id="banner">
+				<img src="images/banner.jpg" />
+			</div>
+			
+			<a id="provide" class="provide">
+				<img src="images/nav1.jpg"/>
 			</a>
-			<a id="wallet" class="wallet" style="color: darkred;">
-				<span class="iconfont iconfont-home" style="height:92px; margin: 15px 0 5px 0;  ">
-					<img src="images/bag.png" width="90" height="90" />
-				</span>
-				<span style="icon-text">个人钱包</span>
+			<a id="wallet" class="wallet" >
+				<img src="images/nav2.jpg"/>
 			</a>
-			<a id="accept" class="accept" style="color: #EF6F12;">
-				<span class="iconfont icon-suodeshui verylarge iconfont-home"></span>
-				<span style="icon-text">得到帮助</span>
+			<a id="accept" class="accept">
+				<img src="images/nav3.jpg"/>
 			</a>
 		</div>
 		<script src="js/mui.min.js"></script>
@@ -61,8 +82,8 @@
 						url:"main_data.html",
 						id:"main_data",
 						styles:{
-							top:190,
-							bottom: 50,
+							top:270,
+							bottom: 60,
 						},
 					}]
 				});

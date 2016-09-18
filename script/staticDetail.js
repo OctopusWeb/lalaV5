@@ -33,7 +33,7 @@
 					$.each(_.data, function(k,v) {
 						var colorClass = "";
 						colorClass = (v.d_process == 0 ? 'danger' : ( v.d_process == 1 ? 'warning':'success'));
-						
+						console.log(colorClass)
 						var tmpl = '';
 						tmpl += '<li class="mui-table-view-cell">';
 						tmpl += '	<div class="record-number">';
